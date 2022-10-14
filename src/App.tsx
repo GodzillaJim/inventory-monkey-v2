@@ -1,10 +1,17 @@
+import React from "react";
+import { Provider } from "react-redux";
+import ThemeCustomization from "./theme";
 import "./styles.css";
+import { store } from "./store";
+import AllRoutes from "./routes";
 
-export default function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <Provider store={store}>
+      <ThemeCustomization>
+        <AllRoutes />
+      </ThemeCustomization>
+    </Provider>
   );
-}
+};
+export default App;
